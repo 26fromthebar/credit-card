@@ -1,0 +1,11 @@
+<input [formControl]="control" />
+<ng-container *ngIf="control.touched && control.errors">
+  <span *ngIf="control.errors['required']" class="">
+    <sup>*</sup>required field
+  </span>
+  <span *ngIf="control.errors['minlength']" class="">
+    minimum length of
+    {{ control.errors["minlength"].requiredLength }}
+    characters
+  </span>
+</ng-container>
